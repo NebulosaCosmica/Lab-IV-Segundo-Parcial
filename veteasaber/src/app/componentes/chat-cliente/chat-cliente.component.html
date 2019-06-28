@@ -1,0 +1,34 @@
+<div class="container ">  
+  
+  <h3>Hable con el Administrador</h3>   
+<div class="container">
+<textarea name="" id="" cols="30" rows="3" [(ngModel)]="elmensaje"></textarea>
+
+<button class="btn btn-lg btn-danger" (click)="enviar()">Enviar</button>
+</div>
+    
+      
+      <table class="table table-striped text-center table-dark ">
+        <thead>
+          <tr>   
+            <th>Mensaje</th>   
+            <th>Usuario</th>   
+            <th>Fecha</th>            
+          </tr>
+        </thead>
+        
+        <tbody>
+
+         
+         <tr class="text-left" *ngFor = "let mens of this.miLista">     
+            <td >{{mens.mensaje}}</td>                          
+            <td >{{mens.usuario}}</td>                          
+            <!-- <td >{{mens.fecha | timeAgo}}</td>                           -->
+            <td >{{mens.fecha}}</td>
+            </tr>    
+        </tbody>      
+      </table>            
+      
+     
+</div>
+

@@ -1,0 +1,40 @@
+<div class="container"*ngIf='!verTe'>
+  <button type="button" class="btn btn-md btn-primary"(click)='this.verTe = true'>Pedir</button>
+</div>
+
+<div class="container" *ngIf='verTe'>
+<div class="mb-3 d-flex justify-content-center form_container cont">
+  <form [formGroup]="altaForm" class=" container modal-content animate" (ngSubmit)="Alta()">
+    <div class="input-group mb-3">   
+      <div class="container-fluid">    
+        <h4 class="font-italic text-center bg-1">Nueva Inscripcion</h4>
+      </div>                  
+
+      <div class="input-group-append">
+        <label for="fecha">Materia</label>
+
+        <div class="input-group">              
+            <input type="text" class="form-control" name="correo" placeholder="correo" [formControl] = 'materia' >
+          </div>  
+        <!--  valido la materia?
+          
+          <select class="form-control" name="perfil" [(ngModel)] = 'seleccion'>
+            <option value="alumno">Alumno</option>
+          <option value="profesor">Profesor</option>
+          <option value="admin">Administrador</option>
+        </select> -->
+      </div>                  				
+
+    </div>    
+
+    <button type="submit" class="altabtn btn btn-md btn-success" [disabled]="!altaForm.valid">Continuar</button>
+    
+              
+    
+              
+</form>          
+          
+            
+</div>
+
+</div>

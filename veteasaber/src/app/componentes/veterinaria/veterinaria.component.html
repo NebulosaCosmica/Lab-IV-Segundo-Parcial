@@ -1,0 +1,30 @@
+
+<div class="container text-center">
+
+  <h3>La veterinaria del pueblo Alumno Profesor Admin</h3> 
+
+  <!-- <span>{{ago | timeAgo}}</span> -->
+
+  <ul class="text-left">
+    <li *ngFor = 'let mensaje of listaMensajes' >{{mensaje.mensaje}}</li>
+  </ul>
+
+  <button type="button" class="btn btn-lg btn-primary" (click)="IrACliente()">Alumno</button>
+
+  <button type="button" class="btn btn-lg btn-primary" (click)="IrAAdmin()">Admin</button>
+
+  <button type="button" class="btn btn-lg btn-primary" (click)="IrAProfe()">Profesor</button>
+
+  
+  <app-logout></app-logout>  
+
+</div>
+
+<div class="container cont">
+
+  <button type="button" class="btn btn-lg btn-success" routerLink="./alta">Nuevo Usuario</button>
+
+  <button type="button" class="btn btn-lg btn-success" routerLink='./ingreso'>Ingresar</button>
+  
+  <router-outlet></router-outlet>
+</div>

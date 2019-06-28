@@ -1,0 +1,71 @@
+
+<div *ngIf='downloadURL'>Foto exitosamente subida</div>
+
+<div class="mb-3 d-flex justify-content-center form_container cont">
+
+    <form [formGroup]="altaForm" class=" container modal-content animate" (ngSubmit)="Alta()">
+
+      <div class="input-group mb-3">   
+        <div class="container-fluid">    
+          <h4 class="font-italic text-center bg-1">Nueva Mascota</h4>
+        </div>         
+  
+        <div class="input-group-append">
+          <label for="animal">Animal</label>
+              <div class="input-group">                     
+              <select class="form-control" name="animal" [formControl]='animal'>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="huron">Hurón</option>
+              </select>       
+            
+          </div>                             
+        </div>                  				
+        
+        <div class="input-group-append">
+          <label for="raza">Raza</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="raza" placeholder="raza" [formControl]='raza'>
+        </div>      
+         </div>
+  
+        <div class="input-group-append">           
+            <label for="nombre">Nombre</label>
+            <div class="input-group">
+              <input type="text" class="form-control" name="nombre" placeholder="nombre" [formControl]='nombre'>
+          </div>    
+  
+        </div>
+
+        <div class="input-group-append">           
+            <label for="edad">Edad</label>
+            <div class="input-group">
+              <input type="number" class="form-control" name="edad" placeholder="años" [formControl]='edad'>
+          </div>      
+      
+  
+        </div>
+
+        <div class="input-group-append">           
+            <label for="foto">Foto</label>
+            <div class="input-group">
+                <input type="file" [formControl]='foto' (change)="uploadFile($event)">
+              
+          </div>    
+  
+        </div>
+  
+  
+      </div>    
+  
+      <button type="submit" class="altabtn btn btn-md btn-success" [disabled]="!altaForm.valid">Continuar</button>
+      
+                
+      
+                
+  </form>   
+  
+           
+            
+              
+  </div>

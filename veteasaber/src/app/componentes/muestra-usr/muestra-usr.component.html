@@ -1,0 +1,43 @@
+
+<div class="container ">  
+  
+    <h3>Listado de Materias</h3>   
+
+    <div class="input-group-append">
+        <label for="perfil">Perfil</label>
+        <select class="form-control" name="perfil" (change) = 'listaNueva()' [(ngModel)] = 'seleccion'>
+            <option value="alumno">Alumno</option>
+          <option value="profesor">Profesor</option>
+          <option value="admin">Administrador</option>
+        </select>
+       
+    </div>
+        
+        <table class="table table-striped text-center table-dark ">
+          <thead>
+            <tr>   
+              
+              <th>Correo</th>
+              <th>Perfil</th>
+              
+            </tr>
+          </thead>
+          
+          <tbody>
+  
+            <tr class="text-left" *ngFor = 'let usr of this.usuariosFiltros'>
+              
+              <td >{{usr.correo}}</td>                          
+              <td >{{usr.perfil}}</td>                          
+                         
+              <tr>
+              
+              
+            <tr>    
+          </tbody>      
+        </table>            
+     
+       
+  </div>
+  
+  

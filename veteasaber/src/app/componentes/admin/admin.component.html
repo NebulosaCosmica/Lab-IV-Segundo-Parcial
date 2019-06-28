@@ -1,0 +1,22 @@
+<div class="container text-center">
+
+  <h3>Lo que ve el administrador</h3>
+  <h5>Iniciado como: {{muestraMail}}</h5>
+</div>
+
+<div class="container">
+
+  <app-boton-volver></app-boton-volver>
+
+  <button class="btn btn-lg btn-secondary" routerLink='./mascotas'>Materias</button>
+  <button class="btn btn-lg btn-info" routerLink='./usuarios'>Usuarios</button>
+
+  <button class="btn btn-lg btn-secondary" routerLink='./turnos'>Turnos</button>
+  <button class="btn btn-lg btn-secondary" routerLink='./chat'>Chat</button>
+
+  <app-logout></app-logout>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

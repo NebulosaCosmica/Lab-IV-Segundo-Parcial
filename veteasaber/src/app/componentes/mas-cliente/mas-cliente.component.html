@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h3>Todo sobre MIS mascotas</h3>
+  
+</div>
+
+<button class="btn btn-lg btn-info" (click)='cambio()' >Listado</button>
+<button class="btn btn-lg btn-info" (click)='cambia()'>Alta</button>
+
+<!-- queda el detalle -->
+<app-detalle [mascota]='seleccionada' (tabla)='refrescaU($event)'></app-detalle>
+<div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div *ngIf ='mostrarListado' class="container">
+    <app-cli-mostra-m [misMascotas]='this.listaMascotas'(mandaMas)='escSel($event)'></app-cli-mostra-m>
+  </div>
+
+  <div *ngIf ='altaMas' class="container">
+    <app-cli-alta-m (tabla)='refresh($event)' [usuarie]='muestraMail'></app-cli-alta-m>
+  </div>

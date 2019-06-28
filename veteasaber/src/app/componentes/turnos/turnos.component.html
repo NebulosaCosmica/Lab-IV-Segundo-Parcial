@@ -1,0 +1,26 @@
+
+<div class="container ">  
+  
+  <h3>Listado de turnos</h3>   
+      
+      <table class="table table-striped text-center table-dark ">
+        <thead>
+          <tr>   
+            <th>Usuario</th>   
+            <th>Turno</th>            
+          </tr>
+        </thead>
+        
+        <tbody>
+
+          <tr class="text-left" *ngFor = "let turn of this.listadoTurnos">     
+            <td >{{turn.correo}}</td>                          
+            <td >{{turn.turno}}</td>                          
+           
+            </tr>    
+        </tbody>      
+      </table>            
+   
+     
+</div>
+

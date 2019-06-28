@@ -1,0 +1,36 @@
+
+<div class="container ">  
+  
+  <h3>Listado de mascotas</h3>   
+      
+      <table class="table table-striped text-center table-dark ">
+        <thead>
+          <tr>   
+            <th>Animal</th>   
+            <th>Raza</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Dueño</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+
+          <tr (click)='aDetalle(masc);' class="text-left" *ngFor = "let masc of this.masFotos">    
+           
+            <td >{{masc.animal}}</td>                          
+            <td >{{masc.raza}}</td>                          
+            <td >{{masc.nombre}}</td>                          
+            <td >{{masc.edad}}</td>                          
+            <td >{{masc.dueno}}</td>                          
+           <td><img [src]="masc.foto | async" class="img-thumbnail img-fluid img-responsive" alt='imagen mascota.jpg'> </td>
+            <!-- traer el filePath de la foto, crear storage.ref
+              <td > <img src='' class="img-thumbnail img-fluid img-responsive" alt='imagen mascota.jpg' ></td>                           -->
+          <tr>    
+        </tbody>      
+      </table>            
+   
+     
+</div>
+

@@ -1,0 +1,117 @@
+
+
+
+<div *ngIf='mascota' class="container">
+  
+  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">    
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary">{{mascota.dueno}}</strong>
+      <h3 class="mb-0">{{mascota.animal}}</h3>
+        <div class="mb-1 text-muted">{{mascota.raza}}</div>
+        <p class="card-text mb-auto">nombre: {{mascota.nombre}}, edad: {{mascota.edad}}</p>        
+    </div>    
+      <div class="col-auto ">
+          <img  [src]="this.mascota.foto | async" class="img-thumbnail img-fluid img-responsive" alt='imagen mascota.jpg'>
+      </div>
+  
+    
+  </div>
+
+  <button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" (click)="modificar()">Modificar</button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar Mascota</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+          <div *ngIf='downloadURL'>Foto exitosamente subida</div>
+
+          <div class="mb-3 d-flex justify-content-center form_container cont">
+
+              <form [formGroup]="altaForm" class=" container modal-content animate" (ngSubmit)="ModificarM()">
+          
+                <div class="input-group mb-3">                   
+            
+                  <div class="input-group-append">
+                    <label for="animal">Animal</label>
+                        <div class="input-group">                     
+                        <select class="form-control" name="animal" [formControl]='animal'>
+                          <option value="perro">Perro</option>
+                          <option value="gato">Gato</option>
+                          <option value="huron">Hurón</option>
+                        </select>       
+                      
+                    </div>                             
+                  </div>                  				
+                  
+                  <div class="input-group-append">
+                    <label for="raza">Raza</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="raza" placeholder="raza" [formControl]='raza'>
+                  </div>      
+                   </div>
+            
+                  <div class="input-group-append">           
+                      <label for="nombre">Nombre</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="nombre" [formControl]='nombre'>
+                    </div>    
+            
+                  </div>
+          
+                  <div class="input-group-append">           
+                      <label for="edad">Edad</label>
+                      <div class="input-group">
+                        <input type="number" class="form-control" name="edad" placeholder="años" [formControl]='edad'>
+                    </div>    
+            
+                  </div>
+          
+                  <div class="input-group-append">           
+                      <label for="dueno">Dueño</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="dueño" placeholder="dueño" [formControl]='dueno'>
+                    </div>    
+            
+                  </div>
+          
+                  <div class="input-group-append">           
+                      <label for="foto">Foto</label>
+                      <div class="input-group">
+                          <input type="file" [formControl]='foto' (change)="uploadFile($event)">
+                        
+                    </div>    
+            
+                  </div>
+            
+            
+                </div>    
+            
+                <button type="submit" class="altabtn btn btn-md btn-success" [disabled]="!altaForm.valid">Guardar Cambios</button>
+                
+                          
+                
+                          
+            </form>   
+            
+                     
+                      
+                        
+            </div>
+
+      </div>
+      <div class="modal-footer">
+        <button #btnClose type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>        
+      </div>
+    </div>
+  </div>
+</div>
